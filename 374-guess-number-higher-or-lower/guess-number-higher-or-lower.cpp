@@ -4,20 +4,25 @@
 class Solution {
 public:
     int guessNumber(int n) {
-        int low = 1, high = n;
+        int start = 0;
+        int end = n;
+       
+       
 
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            int res = guess(mid);
+        while(start<=end){
+            int mid = start + (end - start)/2;
 
-            if (res == 0) {
-                return mid; 
-            } else if (res < 0) {
-                high = mid - 1; 
-            } else {
-                low = mid + 1; 
-            }
+           int ans = guess(mid);
+           if(ans == 0){
+              return mid;
+           }
+           else if(ans == -1){
+            end = mid - 1;
+           }
+           else{
+            start = mid + 1;
+           }
         }
-
-        return -1; }
+        return -1;
+    }
 };
