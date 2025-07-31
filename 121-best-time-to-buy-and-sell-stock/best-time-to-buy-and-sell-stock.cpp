@@ -6,9 +6,9 @@ public:
 
     for (int price : prices) {
         if (price < minPrice) {
-            minPrice = price;  // track lowest price to buy
+            minPrice = price;  
         } else {
-            maxProfit = max(maxProfit, price - minPrice);  // compare profit if sold now
+            maxProfit = max(maxProfit, price - minPrice); 
         }
     }
 
